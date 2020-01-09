@@ -1,23 +1,28 @@
-import React, { Component } from 'redux';
-import { getStatesInfo, getAllStatesList } from '../../utils/apiCalls'
+import React, { Component } from 'react';
+import { getStateInfo } from '../../utils/apiCalls'
 
 class App extends Component {
-
-  componentDidMout(){
-    const stateInfo = async() => {
-      await getStatesInfo
+  constructor(){
+    super(); 
+    this.state = {
+      currentState: {}
     }
-    console.log("stateInfo", stateInfo)
-    return stateInfo
   }
 
+  componentDidMount() {
+    const it = 'ca'
+    return getStateInfo(it)
+      .then(data => console.log("data", data));
+  }
 
 
   render(){
     return(
       <main className="App__main">
-        <ul></ul>
+        <p>hi</p>
       </main>
     )
   }
 }
+
+export default App;

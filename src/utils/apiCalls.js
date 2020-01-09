@@ -1,5 +1,5 @@
 let apiKey = 'fc977c8b-07bd-4fad-9f55-9d8edbc1d22e'
-let stateAbbrv = 'ca'
+
 
 // export const getAllStatesList = async () => {
 //   const options = {
@@ -16,15 +16,18 @@ let stateAbbrv = 'ca'
 //   return allStates.json()
 // }
 
-export const getStatesInfo = async (stateAbbrv) => {
+export const getStateInfo = async (stateAbbrv) => {
+  console.log("stateAbbrv", stateAbbrv)
   const options = {
     method: 'GET',
     headers: {
-      'X-API-KEY': 'apiKey',
+      'X-API-KEY': apiKey,
       'Content-Type': 'application/json'
     }
   }
-  const stateInfo = await fetch(`http://openstates.org/api/v1/metadata/${stateAbbrv}`, options)
+  const url = `https://openstates.org/api/v1/metadata/${stateAbbrv}`;
+
+  const stateInfo = await fetch(url, options)
   if (!stateInfo.ok) {
     throw new Error(`Could not get ${stateAbbrv} info`)
   }
