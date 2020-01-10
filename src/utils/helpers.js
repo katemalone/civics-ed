@@ -299,5 +299,5 @@ export const stateNameList = [
   //   "name": "Wyoming",
   //   "abbreviation": "WY"
   // }
-]
+
 

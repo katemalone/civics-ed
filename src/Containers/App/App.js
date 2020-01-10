@@ -4,16 +4,11 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux'; 
 import { getStateInfo } from '../../utils/apiCalls';
 import { addStateInfo, isLoading } from '../../Actions'
-import { stateNameList } from '../../utils/helpers'
+import { stateNameList } from '../../utils/helpers';
+import StatesContainer from '../StatesContainer/StatesContainer';
+
 
 class App extends Component {
-constructor(){
-  super();
-  this.state = {
-    statesList: [],
-  }
-}
-
 
   componentDidMount() {
     this.getAllStatesList()
@@ -23,17 +18,21 @@ constructor(){
   }
   
   getAllStatesList = () => {
-   this.setState({ statesList: stateNameList })
+    this.props.addStateInfo(stateNameList)
   }
 
   render(){
     return(
       <main className="App__main">
-        
+        <StatesContainer />
       </main>
     )
   }
 }
+
+// export const mapStateToProps = (state) => ({
+//   statesList
+// })
 
 export const mapDispatchToProps = dispatch => ( 
   bindActionCreators({
