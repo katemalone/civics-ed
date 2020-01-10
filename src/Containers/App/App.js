@@ -4,27 +4,32 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux'; 
 import { getStateInfo } from '../../utils/apiCalls';
 import { addStateInfo, isLoading } from '../../Actions'
-import stateList from '../../utils/helpers'
+import { stateNameList } from '../../utils/helpers'
 
 class App extends Component {
+constructor(){
+  super();
+  this.state = {
+    statesList: [],
+  }
+}
 
 
   componentDidMount() {
-    const it = 'ca'
-    return getStateInfo(it)
-      .then(data => console.log("data", data));
+    this.getAllStatesList()
+    // const it = 'ca'
+    // return getStateInfo(it)
+    //   .then(data => console.log("data", data));
   }
   
   getAllStatesList = () => {
-    stateList.map(state => {
-      return 
-    })
+   this.setState({ statesList: stateNameList })
   }
 
   render(){
     return(
       <main className="App__main">
-        <p>hi</p>
+        
       </main>
     )
   }
