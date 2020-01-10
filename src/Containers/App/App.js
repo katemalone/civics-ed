@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-import { getStateInfo } from '../../utils/apiCalls'
+import { bindActionCreators } from 'redux';
+import { Route } from 'react-router-dom';
+import { connect } from 'react-redux'; 
+import { getStateInfo } from '../../utils/apiCalls';
+import { addStateInfo, isLoading } from '../../Actions'
+import stateList from '../../utils/helpers'
 
 class App extends Component {
-  constructor(){
-    super(); 
-    this.state = {
-      currentState: {}
-    }
-  }
+
 
   componentDidMount() {
     const it = 'ca'
     return getStateInfo(it)
       .then(data => console.log("data", data));
   }
-
+  
+  getAllStatesList = () => {
+    stateList.map(state => {
+      return 
+    })
+  }
 
   render(){
     return(
@@ -25,4 +30,11 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ( 
+  bindActionCreators({
+    addStateInfo,
+    isLoading 
+  }, dispatch)
+)
+
+export default connect(null, mapDispatchToProps)(App);
