@@ -6,6 +6,7 @@ import { getStateInfo } from '../../utils/apiCalls';
 import { addStateInfo, isLoading } from '../../Actions'
 import { stateNameList } from '../../utils/helpers';
 import StatesContainer from '../StatesContainer/StatesContainer';
+import './App.scss'
 
 
 class App extends Component {

@@ -71,10 +71,6 @@ export const stateNameList = [
     "abbreviation": "AK"
   },
   {
-    "name": "American Samoa",
-    "abbreviation": "AS"
-  },
-  {
     "name": "Arizona",
     "abbreviation": "AZ"
   },
