@@ -29,6 +29,7 @@ export class StatesCard extends Component {
       isLoading(true);
       const stateInfo = await getStateInfo(state)
       addStateInfo(stateInfo)
+      hasErrored('')
       this.setState({ isClicked: true })
     } catch{
       isLoading(false)
@@ -68,7 +69,9 @@ export const mapStateToProps = ({ errorMsg }) => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  addStateInfo: data => dispatch(addStateInfo(data))
+  addStateInfo: data => dispatch(addStateInfo(data)),
+  isLoading: bool => dispatch(isLoading(bool)),
+  hasErrored: message => dispatch(hasErrored(message))
 })
 
 
