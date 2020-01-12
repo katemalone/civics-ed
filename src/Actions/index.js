@@ -1,13 +1,19 @@
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from '../Reducers';
+export const addStateInfo = (statesInfo) => ({
+  type: 'ADD_STATE_INFO',
+  statesInfo
+})
 
-const store = createStore(rootReducer, composeWithDevTools());
+export const isLoading = (bool) => ({
+  type: 'IS_LOADING', 
+  bool
+})
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+export const addStatesList = (states) => ({
+  type: 'ADD_STATE_LIST', 
+  states
+})
+
+export const hasErrored = (message) => ({
+  type: 'HAS_ERRORED',
+  message
+})

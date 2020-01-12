@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Public+Sans:300,400,500,700,800,900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0; 
+  color: whitesmoke;
+  font-family: 'Public Sans', sans-serif;
+  background-color: black;
+}
+
+
+.StatesContainer {
+
+
+}
+
+.StatesCard {
+ display:flex;
+ flex-direction: column;
+ justify-content: center;
+ height: 100vh;
+ width: 100vw;
+}
+
+.StatesCard-div{
+  display: flex;
+  flex-direction: row;
+}
+
+.StatesCard_header {
+  width: 40%;
+  margin: 6rem 3rem;
+}
+
+.StatesCard_img-div {
+  display: flex;
+  width: 25%;
+  justify-content: space-between;
+  align-items: center;
+  height: 600px;
+}
+
+.img_img {
+  height: 100%;
+}
+
+.arrow {
+  width: 30%;
+}
+
+
+
+.StatesCard_button {
+  width: 25%; 
+  height: 60px;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 1rem;
+}
+
