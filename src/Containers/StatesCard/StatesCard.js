@@ -9,6 +9,7 @@ import { getStateInfo } from '../../utils/apiCalls';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addStateInfo } from '../../Actions'
+import { Redirect } from 'react-router-dom';
 
 
 export class StatesCard extends Component {
@@ -22,8 +23,8 @@ export class StatesCard extends Component {
   
   handleClick = (e) => {
     e.preventDefault()
-    let state = e.target.parentNode.id;
-    getStateInfo(state)
+    // let state = e.target.parentNode.id;
+    // getStateInfo(state)
     this.setState({isClicked: true })
 
   }
@@ -32,7 +33,9 @@ export class StatesCard extends Component {
   const images = { AK, AL, AR, AZ, CA, CO };
   const { id, name, statesImg } = this.props;
   
-  {this.state.isClicked && <Redirect />}
+    if(this.state.isClicked){ 
+    return <Redirect to='/stateInfo' />
+    } 
   return ( 
     <section className="StatesCard" id={id}>
       <div className="StatesCard-div">
@@ -60,7 +63,7 @@ export class StatesCard extends Component {
 export const mapDispatchToProps = dispatch => {
   bindActionCreators({
     addStateInfo
-  },dispatch)
+  }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(StatesCard)

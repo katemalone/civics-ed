@@ -6,6 +6,7 @@ import { getStateInfo } from '../../utils/apiCalls';
 import { addStatesList, isLoading } from '../../Actions'
 import { stateNameList } from '../../utils/helpers';
 import StatesContainer from '../StatesContainer/StatesContainer';
+import StateInfo from '../StateInfo/StateInfo'
 import './App.scss'
 
 
@@ -22,8 +23,9 @@ class App extends Component {
 
   render(){
     return(
-      <main className="App__main">
-        <StatesContainer />
+      <main className='App__main'>
+        <Route exact path='/' render={() => <StatesContainer />} />
+        <Route path='/stateInfo' render={() => <StateInfo /> } />
       </main>
     )
   }
