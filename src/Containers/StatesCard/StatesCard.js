@@ -13,11 +13,17 @@ export const StatesCard = ({id, name, statesImg }) => {
 
   return ( 
     <section className="StatesCard" data-id={id}>
-      <h2 className="StatesCard_name" >{name}</h2>
-      <p className="StatesCard_description">Choose {name} to see the representatives , bills, and something els</p>
-      <i className="fa fa-arrow-left"></i>
-      <img className="StatesCard_img" src={images[statesImg]} /> 
-      <i className="fa fa-arrow-right"></i>
+      <div className="StatesCard-div">
+      <div className="StatesCard_header">
+      <h2 className="header_name" >{name}</h2>
+      <p className="header_description">Choose {name} to see the representatives , bills, and something else</p>
+      </div>
+      <div className="StatesCard_img-div">
+      <i className="fa fa-arrow-left arrow" />
+      <img className="img_img" src={images[statesImg]} /> 
+      <i className="fa fa-arrow-right arrow" />
+      </div>
+      </div>
       <button className="StatesCard_button">Learn More!</button>
     </section>
   )
