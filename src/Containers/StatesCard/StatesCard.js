@@ -16,17 +16,21 @@ export class StatesCard extends Component {
   constructor(){
     super();
     this.state = {
-      isClicked : false 
+      isClicked : false
     }
   }
 
   
-  handleClick = (e) => {
+  handleClick = async (e) => { 
     e.preventDefault()
-    // let state = e.target.parentNode.id;
-    // getStateInfo(state)
-    this.setState({isClicked: true })
-
+    const { addStateInfo } = this.props;
+    try {
+      const state = e.target.parentNode.id;
+      this.props.isLoading(true);
+      const stateInfo = await getStateInfo(state)
+      addStateInfo(stateInfo)
+      this.setState({ isClicked: true })
+    } catch{}
   }
 
   render(){
@@ -62,8 +66,9 @@ export class StatesCard extends Component {
 
 export const mapDispatchToProps = dispatch => {
   bindActionCreators({
-    addStateInfo
-  }, dispatch)
+    addStateInfo,
+    isLoading
+  }, dispatch )
 }
 
 export default connect(null, mapDispatchToProps)(StatesCard)

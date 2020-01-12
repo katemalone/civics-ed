@@ -1,6 +1,6 @@
-export const addStateInfo = (state) => ({
+export const addStateInfo = (statesInfo) => ({
   type: 'ADD_STATE_INFO',
-  state
+  statesInfo
 })
 
 export const isLoading = (bool) => ({
