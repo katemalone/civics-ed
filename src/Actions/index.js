@@ -13,3 +13,7 @@ export const addStatesList = (states) => ({
   states
 })
 
+export const hasErrored = (message) => ({
+  type: 'HAS_ERRORED',
+  message
+})
