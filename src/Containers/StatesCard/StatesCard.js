@@ -8,7 +8,7 @@ import CO from '../../utils/Images/CO.svg';
 import { getStateInfo } from '../../utils/apiCalls';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addStateInfo } from '../../Actions'
+import { addStateInfo, hasErrored, isLoading } from '../../Actions'
 import { Redirect } from 'react-router-dom';
 
 
@@ -23,14 +23,17 @@ export class StatesCard extends Component {
   
   handleClick = async (e) => { 
     e.preventDefault()
-    const { addStateInfo } = this.props;
+    const { addStateInfo, isLoading, errorMsg } = this.props;
     try {
       const state = e.target.parentNode.id;
-      // this.props.isLoading(true);
+      isLoading(true);
       const stateInfo = await getStateInfo(state)
       addStateInfo(stateInfo)
       this.setState({ isClicked: true })
-    } catch{}
+    } catch{
+      isLoading(false)
+      hasErrored({ errorMsg })
+    }
   }
 
   render(){
@@ -60,12 +63,13 @@ export class StatesCard extends Component {
 }
 
 
-// export const mapStateToProps = ({}) => ({
-  
-// })
+export const mapStateToProps = ({ errorMsg }) => ({
+  errorMsg
+})
 
 export const mapDispatchToProps = dispatch => ({
   addStateInfo: data => dispatch(addStateInfo(data))
 })
+
 
 export default connect(null, mapDispatchToProps)(StatesCard)
