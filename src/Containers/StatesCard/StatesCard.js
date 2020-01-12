@@ -26,7 +26,7 @@ export class StatesCard extends Component {
     const { addStateInfo } = this.props;
     try {
       const state = e.target.parentNode.id;
-      this.props.isLoading(true);
+      // this.props.isLoading(true);
       const stateInfo = await getStateInfo(state)
       addStateInfo(stateInfo)
       this.setState({ isClicked: true })
@@ -64,11 +64,8 @@ export class StatesCard extends Component {
   
 // })
 
-export const mapDispatchToProps = dispatch => {
-  bindActionCreators({
-    addStateInfo,
-    isLoading
-  }, dispatch )
-}
+export const mapDispatchToProps = dispatch => ({
+  addStateInfo: data => dispatch(addStateInfo(data))
+})
 
 export default connect(null, mapDispatchToProps)(StatesCard)
