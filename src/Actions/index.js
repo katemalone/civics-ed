@@ -12,3 +12,4 @@ export const addStatesList = (states) => ({
   type: 'ADD_STATE_LIST', 
   states
 })
+
