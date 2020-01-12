@@ -67,12 +67,9 @@ export const mapStateToProps = ({ errorMsg }) => ({
   errorMsg
 })
 
-export const mapDispatchToProps = dispatch => {
-  bindActionCreators({
-    addStateInfo,
-    isLoading,
-    hasErrored
-  }, dispatch )
-}
+export const mapDispatchToProps = dispatch => ({
+  addStateInfo: data => dispatch(addStateInfo(data))
+})
+
 
 export default connect(null, mapDispatchToProps)(StatesCard)
