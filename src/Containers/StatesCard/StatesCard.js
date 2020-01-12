@@ -11,18 +11,28 @@ import { bindActionCreators } from 'redux';
 import { addStateInfo } from '../../Actions'
 
 
-export const StatesCard = ({id, name, statesImg }) => {
+export class StatesCard extends Component {
+  constructor(){
+    super();
+    this.state = {
+      isClicked : false 
+    }
+  }
 
-  const images = { AK, AL, AR, AZ, CA, CO }   
-  const handleClick = (e) => {
+  
+  handleClick = (e) => {
     e.preventDefault()
-    console.log(e.target.parentNode.id)
     let state = e.target.parentNode.id;
     getStateInfo(state)
+    this.setState({isClicked: true })
 
   }
 
-
+  render(){
+  const images = { AK, AL, AR, AZ, CA, CO };
+  const { id, name, statesImg } = this.props;
+  
+  {this.state.isClicked && <Redirect />}
   return ( 
     <section className="StatesCard" id={id}>
       <div className="StatesCard-div">
@@ -36,10 +46,12 @@ export const StatesCard = ({id, name, statesImg }) => {
       <i className="fa fa-arrow-right arrow" />
       </div>
       </div>
-      <button className="StatesCard_button" onClick={(e)=> handleClick(e)}>Learn More!</button>
+      <button className="StatesCard_button" onClick={(e)=> this.handleClick(e)}>Learn More!</button>
     </section>
   )
+  }
 }
+
 
 // export const mapStateToProps = ({}) => ({
   
