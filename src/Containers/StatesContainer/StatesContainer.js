@@ -12,23 +12,16 @@ import CA from '../../utils/Images/CA.svg';
 import CO from '../../utils/Images/CO.svg';
 
 const StatesContainer = ({ statesList }) => {
-  const images = {  AK, AL, AR, AZ }
-  const statePic = images.forEach(image => {
-    return
-    image.filter(image => {
-      return (
-        <img src={image === statesImg} />
-      )
 
-    })
 
   let statesInfo = statesList.map(state => {
+
     return (
       <StatesCard 
         key={state.abbreviation.toLowerCase()}
         name={state.name} 
         id={state.abbreviation.toLowerCase()}
-        stateImg={statePic}
+        statesImg={state.abbreviation}
         /> 
     )
   })

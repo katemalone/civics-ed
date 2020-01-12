@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Public+Sans:300,400,500,700,800,900&display=swap');
 
 
 * {
   margin: 0;
   padding: 0; 
   color: whitesmoke;
-}
-
-
-.StatesContainer {
+  font-family: 'Public Sans', sans-serif;
   background-color: black;
 }
 
+
+// .StatesContainer {
+//   background-color: black;
+// }
+
+.StatesCard_img {
+  width: 25%;
+}
