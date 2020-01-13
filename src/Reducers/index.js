@@ -3,14 +3,14 @@ import { currentState } from './currentState';
 import { statesList } from './statesList';
 import { isLoading } from './isLoading';
 import { errorMsg } from './errorMsg'
-import { stateReps } from './stateReps'
+import { stateRepsInfo } from './stateReps'
 
 const rootReducer = combineReducers({
   statesList,
   currentState,
   isLoading,
   errorMsg,
-  stateReps
+  stateRepsInfo
 });
 
 export default rootReducer;
