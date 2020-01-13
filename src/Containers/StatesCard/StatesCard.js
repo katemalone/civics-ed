@@ -59,7 +59,7 @@ export class StatesCard extends Component {
       </div>
       <button className="StatesCard_button" onClick={(e)=> this.handleClick(e)}>Learn More!</button>
     </section>
-  )
+    )
   }
 }
 

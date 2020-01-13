@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setRepInfo, isLoading, hasErrored }  from '../../Actions';
 import { getStateReps } from '../../utils/apiCalls';
+import StateRepsContainer from '../StateRepsContainer/StateRepsContainer'
 
 export class StateInfo extends Component {
   constructor(){
@@ -18,33 +19,27 @@ export class StateInfo extends Component {
     const { abbreviation } = this.props.currentState
     try{
       const reps = await getStateReps(abbreviation)
-      setRepInfo(reps)
+      const repsClean = Object.values(reps)
+      setRepInfo(repsClean)
       this.setState({isClicked:true})
     }catch{}
   }
 
 
-  // cleanStateRepInfo = () => {
-  //   stateReps.filter(rep => {
-  //   })
-  // }
   render(){
     const { isClicked } = this.state;
-    const { name, legislature_name, legislature_url, chambers, capitol_timezone } = this.props.currentState;
+    const { name, legislature_name, legislature_url, capitol_timezone } = this.props.currentState;
     
   return(
     <section className="StateInfo" >
       <h2 className="State_Title">{name}</h2>
       <p>{legislature_name}</p>
       <a className="state_link" href={legislature_url} >{name} &rarr;</a>
-      {/* <p>{chambers}</p> */}
       <p>{capitol_timezone}</p>
       { !isClicked &&
       <button onClick={(e) => this.handleClick(e)}>see reps</button>}
       {isClicked && 
-      <div className="stateReps">
-        <p>hello</p>
-      </div> }
+        <StateRepsContainer /> }
 
     </section>
   )
