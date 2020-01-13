@@ -16,7 +16,6 @@ export const getStateInfo = async (stateAbbrv) => {
   if (!stateInfo.ok) {
     throw new Error(`Could not get ${stateAbbrv} info`)
   }
-  // console.log(stateInfo.json())
   return stateInfo.json();
 }
 
@@ -36,7 +35,6 @@ export const getStateReps = async (stateAbbrv) => {
   if (!stateInfo.ok) {
     throw new Error(`Could not get ${stateAbbrv} reps info`)
   }
-  // console.log(stateInfo.json())
   return stateInfo.json();
 }
 

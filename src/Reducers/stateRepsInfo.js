@@ -1,4 +1,4 @@
-export const stateReps = (state = {}, action) => {
+export const stateRepsInfo = (state = {}, action) => {
   switch(action.type){
     case 'SET_REP_INFO':
       return action.reps;

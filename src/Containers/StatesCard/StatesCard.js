@@ -7,7 +7,6 @@ import CA from '../../utils/Images/CA.svg';
 import CO from '../../utils/Images/CO.svg';
 import { getStateInfo } from '../../utils/apiCalls';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { addStateInfo, hasErrored, isLoading } from '../../Actions'
 import { Redirect } from 'react-router-dom';
 
@@ -59,7 +58,7 @@ export class StatesCard extends Component {
       </div>
       <button className="StatesCard_button" onClick={(e)=> this.handleClick(e)}>Learn More!</button>
     </section>
-  )
+    )
   }
 }
 
