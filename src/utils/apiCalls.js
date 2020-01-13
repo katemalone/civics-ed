@@ -20,3 +20,23 @@ export const getStateInfo = async (stateAbbrv) => {
   return stateInfo.json();
 }
 
+
+export const getStateReps = async (stateAbbrv) => {
+  console.log("stateAbbrv2", stateAbbrv)
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-API-KEY': apiKey,
+      'Content-Type': 'application/json'
+    }
+  }
+  const url = `https://openstates.org/api/v1/legislators/?state=${stateAbbrv}`
+
+  const stateInfo = await fetch(url, options)
+  if (!stateInfo.ok) {
+    throw new Error(`Could not get ${stateAbbrv} reps info`)
+  }
+  // console.log(stateInfo.json())
+  return stateInfo.json();
+}
+

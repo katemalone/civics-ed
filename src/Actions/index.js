@@ -17,3 +17,8 @@ export const hasErrored = (message) => ({
   type: 'HAS_ERRORED',
   message
 })
+
+export const setRepInfo = (reps) => ({
+  type: 'SET_REP_INFO',
+  reps
+})
