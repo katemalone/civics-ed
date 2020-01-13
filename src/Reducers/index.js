@@ -3,7 +3,7 @@ import { currentState } from './currentState';
 import { statesList } from './statesList';
 import { isLoading } from './isLoading';
 import { errorMsg } from './errorMsg'
-import { stateRepsInfo } from './stateReps'
+import { stateRepsInfo } from './stateRepsInfo'
 
 const rootReducer = combineReducers({
   statesList,

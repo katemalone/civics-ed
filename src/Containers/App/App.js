@@ -10,7 +10,7 @@ import StateInfo from '../StateInfo/StateInfo'
 import './App.scss'
 
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
     this.getAllStatesList()

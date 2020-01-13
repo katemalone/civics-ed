@@ -21,7 +21,7 @@ export class StateInfo extends Component {
       const reps = await getStateReps(abbreviation)
       const repsClean = Object.values(reps)
       setRepInfo(repsClean)
-      this.setState({isClicked:true})
+      this.setState({ isClicked:true })
     }catch{}
   }
 
@@ -45,9 +45,9 @@ export class StateInfo extends Component {
   )
 }
 }
-export const mapStateToProps = ({ currentState, errorMsg, stateReps }) => ({
+export const mapStateToProps = ({ currentState, errorMsg, stateRepsInfo }) => ({
   currentState,
-  stateReps,
+  stateRepsInfo,
   errorMsg
 })
 

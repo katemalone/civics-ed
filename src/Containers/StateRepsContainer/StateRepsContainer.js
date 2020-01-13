@@ -1,19 +1,17 @@
 import React from 'react'; 
 import { connect } from 'react-redux';
-import StateRepsCard from '../StateReps/StateReps'
+import StateReps from '../StateReps/StateReps'
 
-export const StateRepsContainer = () => {
-  const { StateReps } = this.props;
-  const display = StateReps.map(rep => {
+export const StateRepsContainer = ({ stateRepsInfo }) => {
+  const display = stateRepsInfo.map(rep => {
     return (
-      <StateRepsCard
+      <StateReps
         key={rep.id}
         name={rep.full_name}
         image={rep.photo_url}
         email={rep.email}
         party={rep.party}
         chamber={rep.chamber}
-        info={rep.offices.address}
       />
     )
   })
@@ -24,8 +22,8 @@ export const StateRepsContainer = () => {
   )
 }
 
-export const mapStateToProps = ({ stateReps }) => ({
-  stateReps
+export const mapStateToProps = ({ stateRepsInfo }) => ({
+  stateRepsInfo
 })
 
 export const mapDispatchToProps = dispatch => ({

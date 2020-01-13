@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux';
 
 const StatesContainer = ({ statesList }) => {
 
-
   let statesInfo = statesList.map(state => {
 
     return (
