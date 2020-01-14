@@ -5,6 +5,10 @@ exports[`App should match snapShot 1`] = `
   className="App__main"
 >
   <Route
+    path="/"
+    render={[Function]}
+  />
+  <Route
     exact={true}
     path="/"
     render={[Function]}

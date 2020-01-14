@@ -34,7 +34,7 @@ exports[`StatesCard should match snapShot 1`] = `
       />
     </div>
     <button
-      className="StatesCard_button"
+      className="btn"
       onClick={[Function]}
     >
        Choose 

@@ -7,6 +7,7 @@ import StatesContainer from '../StatesContainer/StatesContainer';
 import StateInfo from '../StateInfo/StateInfo';
 import './App.scss';
 import PropTypes from 'prop-types';
+import Header from '../../Components/Header'
 
 
 export class App extends Component {
@@ -23,6 +24,7 @@ export class App extends Component {
   render(){
     return(
       <main className='App__main'>
+        <Route path='/' render={() => <Header  />} />
         <Route exact path='/' render={() => <StatesContainer />} />
         <Route path='/stateInfo' render={() => <StateInfo /> } />
       </main>
