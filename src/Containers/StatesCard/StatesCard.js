@@ -52,11 +52,11 @@ export class StatesCard extends Component {
       <p className="header_description">Choose {name} to see the state representatives. </p>
       </div>
       <div className="StatesCard_img-div">
-      <i className="fa fa-arrow-left arrow" />
+      {/* <i className="fa fa-arrow-left arrow" /> */}
       <img className="img_img" src={images[statesImg]} /> 
-      <i className="fa fa-arrow-right arrow" />
+      {/* <i className="fa fa-arrow-right arrow" /> */}
       </div>
-        <button className="btn" onClick={(e) => this.handleClick(e)}> Choose {name}! </button>
+        <button className="btn StatesCard_btn" onClick={(e) => this.handleClick(e)}> Choose {name}! </button>
       </div>
     </section>
     )

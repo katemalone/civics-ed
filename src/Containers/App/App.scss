@@ -10,7 +10,7 @@
 }
 
 .Header{
-  height:25vh;;
+  height:25vh;
 
     &_image {
       height: 2rem;
@@ -22,7 +22,6 @@
 
 .StateReps_card {
   padding: 15px; 
-  margin: 15px;
   border: darkslategrey solid 1px;
   border-radius: 10px;
 }
@@ -41,19 +40,38 @@
  flex-direction: column;
  justify-content: center;
  height: 90vh;
- width: 100vw;
+ width: 90vw;
+ position: relative;
+ border: darkslategrey solid 1px;
+ border-radius: 10px;
+ margin: auto;
+ margin-top: 2rem;
+}
+
+.StatesCard_btn{ 
+ position: absolute; 
+ bottom: -16rem;
+ left: 5rem;
 }
 
 .StatesCard-div{
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .StatesCard_header {
-  width: 40%;
-  margin: 6rem 3rem;
+  position: absolute;
+  top: -14rem;
+  left: 4rem;
 }
 
+.header_name {
+  font-size: 7rem;
+  &_description {
+    font-size: 1rem;
+ }
+}
 
 .StatesCard_img-div {
   display: flex;
@@ -61,23 +79,32 @@
   justify-content: space-between;
   align-items: center;
   height: 600px;
+  position: absolute;
+  bottom: -17rem;
+  right: 7rem;
 }
+
+
 
 .img_img {
-  height: 100%;
+  width: 17rem;
 }
-
-.arrow {
-  width: 30%;
-}
-
-
 
 .btn {
-  width: 25%; 
+  width: 17rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+  // text-transform: uppercase;
   height: 60px;
   background-color: whitesmoke;
   color: black;
   border-radius: 1rem;
 }
+
+.arrow {
+  width: 20px;
+  margin:15px;
+}
+
+
 
