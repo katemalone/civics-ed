@@ -7,7 +7,7 @@ export const StateReps = ({ name, image, email, party, chamber }) => {
         <p>Chamber: {chamber}</p>
         <p>{party}</p>
         <p>Contact info {email}</p>
-        <img src={image} />
+        <img className="StateReps_img" src={image} />
       </section>
     )
 }

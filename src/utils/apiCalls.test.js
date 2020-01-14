@@ -36,7 +36,18 @@ describe('getStateInfo', () => {
 
       expect(window.fetch).toHaveBeenCalledWith(`https://openstates.org/api/v1/metadata/${stateAbbrv}`, mockOptions);
     });
+
+  it('should return an error if the response is not okay', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      });
+    });
+
+    expect(getStateInfo(stateAbbrv)).rejects.toEqual(Error(`Could not get ${stateAbbrv} info`));
+  });
 });
+
 
 
 describe('getStateReps', () => {
@@ -77,5 +88,16 @@ describe('getStateReps', () => {
 
     expect(window.fetch).toHaveBeenCalledWith(`https://openstates.org/api/v1/legislators/?state=${stateAbbrv}`, mockOptions);
   });
+
+  it('should return an error if the response is not okay', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      });
+    });
+
+    expect(getStateReps(stateAbbrv)).rejects.toEqual(Error(`Could not get ${stateAbbrv} reps info`));
+  });
 });
+
 

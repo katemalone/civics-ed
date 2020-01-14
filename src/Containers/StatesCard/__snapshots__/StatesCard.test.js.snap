@@ -23,18 +23,12 @@ exports[`StatesCard should match snapShot 1`] = `
     <div
       className="StatesCard_img-div"
     >
-      <i
-        className="fa fa-arrow-left arrow"
-      />
       <img
         className="img_img"
       />
-      <i
-        className="fa fa-arrow-right arrow"
-      />
     </div>
     <button
-      className="btn"
+      className="btn StatesCard_btn"
       onClick={[Function]}
     >
        Choose 

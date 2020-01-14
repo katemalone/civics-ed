@@ -20,9 +20,16 @@
 }
 
 .StateReps_card {
-  padding: 15px; 
+  padding: 1rem; 
   border: darkslategrey solid 1px;
   border-radius: 10px;
+  width: 75vw;
+  margin: 1rem;
+}
+
+.StateInfo{
+  margin: 2rem;
+  padding: 1rem;
 }
 
 .State_Title {

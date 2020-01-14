@@ -12,6 +12,8 @@ exports[`StateReps should match snapShot 1`] = `
   <p>
     Contact info 
   </p>
-  <img />
+  <img
+    className="StateReps_img"
+  />
 </section>
 `;
