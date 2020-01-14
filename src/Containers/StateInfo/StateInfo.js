@@ -16,14 +16,17 @@ export class StateInfo extends Component {
  
   handleClick = async (e) => {
     e.preventDefault()
-    const { setRepInfo } = this.props
+    const { setRepInfo, errorMsg } = this.props
     const { abbreviation } = this.props.currentState
     try{
       const reps = await getStateReps(abbreviation)
       const repsClean = Object.values(reps)
       setRepInfo(repsClean)
       this.setState({ isClicked:true })
-    }catch{}
+      hasErrored('')
+    } catch ({ messge }) {
+      hasErrored({ errorMsg })
+    }
   }
 
 
@@ -38,7 +41,7 @@ export class StateInfo extends Component {
       <a className="state_link" href={legislature_url} >{name} &rarr;</a>
       <p>{capitol_timezone}</p>
       { !isClicked &&
-      <button className="btn" onClick={(e) => this.handleClick(e)}>see {name} reps</button>}
+        <button className="btn" onClick={(e) => this.handleClick(e)}>{isClicked && <i className="fa fa-refresh fa-spin"></i>}see {name} reps</button>}
       {isClicked && 
         <StateRepsContainer /> }
 
@@ -46,13 +49,15 @@ export class StateInfo extends Component {
   )
 }
 }
-export const mapStateToProps = ({ currentState, stateRepsInfo }) => ({
+export const mapStateToProps = ({ currentState, stateRepsInfo, errorMsg }) => ({
   currentState,
   stateRepsInfo,
+  errorMsg
 })
 
 export const mapDispatchToProps = dispatch => ({
   setRepInfo: data => dispatch(setRepInfo(data)),
+  hasErrored: message => dispatch(hasErrored(message))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(StateInfo);

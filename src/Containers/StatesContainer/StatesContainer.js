@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import StatesCard from '../StatesCard/StatesCard';
 import { addStatesList } from '../../Actions'
-import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 
