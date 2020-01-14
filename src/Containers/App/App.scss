@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Public+Sans:300,400,500,700,800,900&display=swap');
 
-
 * {
   margin: 0;
   padding: 0; 
@@ -9,14 +8,26 @@
   background-color: black;
 }
 
-.Header{
+.Header {
   height:15vh;
-
     &_image {
       height: 2.4rem;
       margin: 2.5rem;
       margin-left: 4rem;
   }
+}
+
+.invalidRoutes {
+  width: 75vw;
+  margin: auto;
+  margin-top: 1rem;
+  align-items: center;
+  align-self: center;
+}
+
+.invalid-note {
+  width:90%;
+  align-self: center;
 }
 
 .StateReps_card {
@@ -27,7 +38,7 @@
   margin: 1rem;
 }
 
-.StateInfo{
+.StateInfo {
   margin: 2rem;
   padding: 1rem;
 }
@@ -37,7 +48,7 @@
   height: 60px;
 }
 
-.StateInfo{
+.StateInfo {
   color: whitesmoke;
 }
 
@@ -54,13 +65,13 @@
  margin-top: 2rem;
 }
 
-.StatesCard_btn{ 
+.StatesCard_btn { 
  position: absolute; 
  bottom: -14rem;
  left: 4rem;
 }
 
-.StatesCard-div{
+.StatesCard-div {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -86,11 +97,9 @@
   align-items: center;
   height: 600px;
   position: absolute;
-  bottom: -17rem;
+  bottom: -19rem;
   right: 7rem;
 }
-
-
 
 .img_img {
   width: 17rem;
@@ -100,7 +109,7 @@
   width: 17rem;
   font-weight: 800;
   font-size: 1.1rem;
-  // text-transform: uppercase;
+  margin: 15px;
   height: 60px;
   background-color: whitesmoke;
   color: black;

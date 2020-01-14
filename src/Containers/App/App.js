@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'; 
 import { addStatesList, isLoading } from '../../Actions';
 import { stateNameList } from '../../utils/helpers';
@@ -8,6 +8,7 @@ import StateInfo from '../StateInfo/StateInfo';
 import './App.scss';
 import PropTypes from 'prop-types';
 import Header from '../../Components/Header'
+import invalidRoutes from '../../Components/invalidRoutes';
 
 
 export class App extends Component {
@@ -25,8 +26,11 @@ export class App extends Component {
     return(
       <main className='App__main'>
         <Route path='/' render={() => <Header  />} />
-        <Route exact path='/' render={() => <StatesContainer />} />
-        <Route path='/stateInfo' render={() => <StateInfo /> } />
+        <Switch>
+          <Route exact path='/' render={() => <StatesContainer />} />
+          <Route path='/stateInfo' render={() => <StateInfo /> } />
+          <Route component={invalidRoutes} />
+        </Switch>
       </main>
     )
   }
