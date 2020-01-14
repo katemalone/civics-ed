@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StateRepsContainer should match snapShot 1`] = `
+<div>
+  <StateReps
+    image="http://akleg.gov/images/legislators/smn.jpg"
+    key="Bert Stedman"
+    name="Bert Stedman"
+  />
+</div>
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StateReps should match snapShot 1`] = `
+<section
+  className="StateReps_card"
+>
+  <h3 />
+  <p>
+    Chamber: 
+  </p>
+  <p />
+  <p>
+    Contact info 
+  </p>
+  <img />
+</section>
+`;

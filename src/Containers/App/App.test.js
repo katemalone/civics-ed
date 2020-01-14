@@ -1,19 +1,44 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { App } from './App';
+import { App, mapDispatchToProps } from './App';
+import { addStatesList } from '../../Actions'
 
 describe('App', () => {
-let wrapper;
-let mockProps;
+    
+  
+  it('should match snapShot', () => {
+    const wrapper = shallow(
+    <App addStatesList={jest.fn()} />);
+      expect(wrapper).toMatchSnapshot()
+  });
 
-  beforeEach(() => {
-    wrapper = shallow(<App />);
-    mockProps= {
-      
-    }
-  }) 
+  describe('mapDispatchToProps', () => {
+    it('calls dispatch with addStatesList when addStatesList is called', () => {
 
-  it('should match Snapshot', () => {
-    expect(wrapper).toMatchSnapshot();
-  })
+      const mockDispatch = jest.fn();
+      const actionToDispatch = addStatesList([
+        {
+          "name": "Alabama",
+          "abbreviation": "AL"
+        },
+        {
+          "name": "Alaska",
+          "abbreviation": "AK"
+        }]);
+
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addStatesList([
+        {
+          "name": "Alabama",
+          "abbreviation": "AL"
+        },
+        {
+          "name": "Alaska",
+          "abbreviation": "AK"
+        }]);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+  });
+ 
 })

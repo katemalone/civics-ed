@@ -9,6 +9,7 @@ import { getStateInfo } from '../../utils/apiCalls';
 import { connect } from 'react-redux';
 import { addStateInfo, hasErrored, isLoading } from '../../Actions'
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
 export class StatesCard extends Component {
@@ -24,7 +25,7 @@ export class StatesCard extends Component {
     e.preventDefault()
     const { addStateInfo, isLoading, errorMsg } = this.props;
     try {
-      const state = e.target.parentNode.id;
+      const state = e.target.parentNode.parentNode.id;
       isLoading(true);
       const stateInfo = await getStateInfo(state)
       addStateInfo(stateInfo)
@@ -48,15 +49,15 @@ export class StatesCard extends Component {
       <div className="StatesCard-div">
       <div className="StatesCard_header">
       <h2 className="header_name" >{name}</h2>
-      <p className="header_description">Choose {name} to see the representatives , bills, and something else</p>
+      <p className="header_description">Choose {name} to see the state representatives. </p>
       </div>
       <div className="StatesCard_img-div">
       <i className="fa fa-arrow-left arrow" />
       <img className="img_img" src={images[statesImg]} /> 
       <i className="fa fa-arrow-right arrow" />
       </div>
+        <button className="btn" onClick={(e) => this.handleClick(e)}> Choose {name}! </button>
       </div>
-      <button className="StatesCard_button" onClick={(e)=> this.handleClick(e)}>Learn More!</button>
     </section>
     )
   }
@@ -75,3 +76,10 @@ export const mapDispatchToProps = dispatch => ({
 
 
 export default connect(null, mapDispatchToProps)(StatesCard)
+
+StatesCard.propTypes = {
+  addStateInfo: PropTypes.func,
+  errorMsg: PropTypes.string,
+  hasErrored: PropTypes.func,
+  isLoading: PropTypes.func
+}
