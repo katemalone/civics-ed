@@ -10,13 +10,12 @@
 }
 
 .Header{
-  height:25vh;
+  height:15vh;
 
     &_image {
-      height: 2rem;
-      margin: auto;
-      padding: 3rem;
-      padding-left: 4rem;
+      height: 2.4rem;
+      margin: 2.5rem;
+      margin-left: 4rem;
   }
 }
 
@@ -39,7 +38,7 @@
  display:flex;
  flex-direction: column;
  justify-content: center;
- height: 90vh;
+ height: 88vh;
  width: 90vw;
  position: relative;
  border: darkslategrey solid 1px;
@@ -50,8 +49,8 @@
 
 .StatesCard_btn{ 
  position: absolute; 
- bottom: -16rem;
- left: 5rem;
+ bottom: -14rem;
+ left: 4rem;
 }
 
 .StatesCard-div{
