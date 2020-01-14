@@ -31,11 +31,9 @@ export const mapStateToProps = ({ statesList }) => ({
   statesList
 })
 
-export const mapDispatchToProps = dispatch => (
-  bindActionCreators({
-    addStatesList
-  },dispatch)
-)
+export const mapDispatchToProps = dispatch => ({
+  addStatesList: states => dispatch(addStatesList(states))
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(StatesContainer)
 
