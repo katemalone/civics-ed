@@ -6,7 +6,7 @@ export const StateRepsContainer = ({ stateRepsInfo }) => {
   const display = stateRepsInfo.map(rep => {
     return (
       <StateReps
-        key={rep.id}
+        key={rep.full_name}
         name={rep.full_name}
         image={rep.photo_url}
         email={rep.email}
@@ -26,9 +26,5 @@ export const mapStateToProps = ({ stateRepsInfo }) => ({
   stateRepsInfo
 })
 
-export const mapDispatchToProps = dispatch => ({
 
-
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(StateRepsContainer)
+export default connect(mapStateToProps)(StateRepsContainer)

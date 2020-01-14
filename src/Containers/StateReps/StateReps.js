@@ -6,8 +6,7 @@ export const StateReps = ({ name, image, email, party, chamber }) => {
         <h3>{name}</h3>
         <p>Chamber: {chamber}</p>
         <p>{party}</p>
-        <p>Contact info</p>
-        <p>{email}</p>
+        <p>Contact info {email}</p>
         <img src={image} />
       </section>
     )

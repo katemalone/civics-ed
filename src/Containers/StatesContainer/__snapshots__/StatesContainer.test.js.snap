@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatesContainer should match snapShot 1`] = `
+<section
+  className="StatesContainer"
+>
+  <Connect(StatesCard)
+    id="al"
+    key="al"
+    name="Alabama"
+    statesImg="AL"
+  />
+  <Connect(StatesCard)
+    id="ak"
+    key="ak"
+    name="Alaska"
+    statesImg="AK"
+  />
+</section>
+`;

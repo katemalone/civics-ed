@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatesCard should match snapShot 1`] = `
+<section
+  className="StatesCard"
+>
+  <div
+    className="StatesCard-div"
+  >
+    <div
+      className="StatesCard_header"
+    >
+      <h2
+        className="header_name"
+      />
+      <p
+        className="header_description"
+      >
+        Choose 
+         to see the state representatives. 
+      </p>
+    </div>
+    <div
+      className="StatesCard_img-div"
+    >
+      <i
+        className="fa fa-arrow-left arrow"
+      />
+      <img
+        className="img_img"
+      />
+      <i
+        className="fa fa-arrow-right arrow"
+      />
+    </div>
+    <button
+      className="StatesCard_button"
+      onClick={[Function]}
+    >
+       Choose 
+      ! 
+    </button>
+  </div>
+</section>
+`;

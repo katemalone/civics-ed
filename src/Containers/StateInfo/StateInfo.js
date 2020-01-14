@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { setRepInfo, isLoading, hasErrored }  from '../../Actions';
 import { getStateReps } from '../../utils/apiCalls';
 import StateRepsContainer from '../StateRepsContainer/StateRepsContainer'
+import PropTypes from 'prop-types';
 
 export class StateInfo extends Component {
   constructor(){
@@ -37,7 +38,7 @@ export class StateInfo extends Component {
       <a className="state_link" href={legislature_url} >{name} &rarr;</a>
       <p>{capitol_timezone}</p>
       { !isClicked &&
-      <button onClick={(e) => this.handleClick(e)}>see reps</button>}
+      <button className="btn" onClick={(e) => this.handleClick(e)}>see {name} reps</button>}
       {isClicked && 
         <StateRepsContainer /> }
 
@@ -45,16 +46,19 @@ export class StateInfo extends Component {
   )
 }
 }
-export const mapStateToProps = ({ currentState, errorMsg, stateRepsInfo }) => ({
+export const mapStateToProps = ({ currentState, stateRepsInfo }) => ({
   currentState,
   stateRepsInfo,
-  errorMsg
 })
 
 export const mapDispatchToProps = dispatch => ({
   setRepInfo: data => dispatch(setRepInfo(data)),
-  isLoading: bool => dispatch(isLoading(bool)),
-  hasErrored: message => dispatch(hasErrored(message))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(StateInfo);
+
+StateInfo.propTypes = {
+  setRepInfo: PropTypes.func,
+  currentState: PropTypes.object,
+  stateRepsInfo: PropTypes.array
+}

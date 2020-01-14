@@ -2,7 +2,6 @@ let apiKey = 'fc977c8b-07bd-4fad-9f55-9d8edbc1d22e'
 
 
 export const getStateInfo = async (stateAbbrv) => {
-  console.log("stateAbbrv", stateAbbrv)
   const options = {
     method: 'GET',
     headers: {
@@ -21,7 +20,6 @@ export const getStateInfo = async (stateAbbrv) => {
 
 
 export const getStateReps = async (stateAbbrv) => {
-  console.log("stateAbbrv2", stateAbbrv)
   const options = {
     method: 'GET',
     headers: {

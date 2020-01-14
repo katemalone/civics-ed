@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import StatesCard from '../StatesCard/StatesCard';
 import { addStatesList } from '../../Actions'
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 
-const StatesContainer = ({ statesList }) => {
+export const StatesContainer = ({ statesList }) => {
 
   let statesInfo = statesList.map(state => {
 
@@ -37,3 +38,8 @@ export const mapDispatchToProps = dispatch => (
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(StatesContainer)
+
+StatesContainer.propTypes = {
+  addStateList: PropTypes.func,
+  statesList: PropTypes.array,
+}

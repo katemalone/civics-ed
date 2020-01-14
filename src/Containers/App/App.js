@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux'; 
-import { getStateInfo } from '../../utils/apiCalls';
-import { addStatesList, isLoading } from '../../Actions'
+import { addStatesList, isLoading } from '../../Actions';
 import { stateNameList } from '../../utils/helpers';
 import StatesContainer from '../StatesContainer/StatesContainer';
-import StateInfo from '../StateInfo/StateInfo'
-import './App.scss'
+import StateInfo from '../StateInfo/StateInfo';
+import './App.scss';
+import PropTypes from 'prop-types';
 
 
 export class App extends Component {
@@ -32,11 +31,14 @@ export class App extends Component {
 }
 
 
-export const mapDispatchToProps = dispatch => ( 
-  bindActionCreators({
-    addStatesList,
-    isLoading 
-  }, dispatch)
-)
+export const mapDispatchToProps = dispatch => ({
+  addStatesList: data => dispatch(addStatesList(data)),
+})
 
 export default connect(null, mapDispatchToProps)(App);
+
+
+App.propTypes = {
+  addStatesList: PropTypes.func,
+  isLoading: PropTypes.func
+}
