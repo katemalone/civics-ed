@@ -20,6 +20,7 @@ Kate Malone (https://github.com/katemalone)
 
 ### Set Up
 Clone repo.
+
 ```git clone https://github.com/katemalone/civics-ed```
 
 Install dependencies.
