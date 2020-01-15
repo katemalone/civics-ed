@@ -18,7 +18,7 @@ Links using React Router.
 ### Team (solo)
 Kate Malone (https://github.com/katemalone)
 
-###Set Up
+### Set Up
 Clone repo.
 ```git clone https://github.com/katemalone/civics-ed```
 
