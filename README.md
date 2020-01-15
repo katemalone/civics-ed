@@ -8,6 +8,9 @@ Data Map
 To begin, the overall data flow and necessary components are mapped out.
 <img width="769" alt="Screen Shot 2020-01-14 at 8 42 56 PM" src="https://user-images.githubusercontent.com/49652149/72403232-9eb5b600-370e-11ea-8ef0-96a84e0d104a.png">
 
+### State of Affairs app flow
+![](stateofaffairs.gif)
+
 ### Tech
 This project was bootstrapped with Create React App utilizing Redux.
 
