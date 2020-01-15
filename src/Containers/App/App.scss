@@ -10,10 +10,16 @@
 
 .Header {
   height:15vh;
+  position:relative;
     &_image {
       height: 2.4rem;
       margin: 2.5rem;
       margin-left: 4rem;
+  }
+  &_tag{
+    margin-left: 4rem;
+    position: absolute;
+    top:6rem;
   }
 }
 

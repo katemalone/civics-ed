@@ -7,6 +7,7 @@ export const Header = () => {
   return(
     <div className="Header"> 
       <Link to='/'><img className="Header_image" type="image" src={logo} /></Link>
+      <p className="Header_tag">Look up your local government!</p>
     </div>
   )
 }
