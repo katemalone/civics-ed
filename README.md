@@ -15,15 +15,17 @@ Tested with Jest/Enzyme.
 
 Links using React Router.
 
-Team (solo)
+### Team (solo)
 Kate Malone (https://github.com/katemalone)
-Set Up
-Clone repo.
 
-git clone https://github.com/katemalone/civics-ed
+###Set Up
+Clone repo.
+```git clone https://github.com/katemalone/civics-ed```
+
 Install dependencies.
 
-npm install
+```npm install```
+
 Run browser.
 
-npm start
+```npm start```
