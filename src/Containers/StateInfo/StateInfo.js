@@ -33,6 +33,7 @@ export class StateInfo extends Component {
   render(){
     const { isClicked } = this.state;
     const { name, legislature_name, legislature_url, capitol_timezone } = this.props.currentState;
+    const { errorMsg } = this.props;
     
   return(
     <section className="StateInfo" >
@@ -44,6 +45,7 @@ export class StateInfo extends Component {
         <button className="btn" onClick={(e) => this.handleClick(e)}>{isClicked && <i className="fa fa-refresh fa-spin"></i>}see {name} reps</button>}
       {isClicked && 
         <StateRepsContainer /> }
+      {errorMsg && <p className="login-error">{errorMsg}</p>}
 
     </section>
   )
