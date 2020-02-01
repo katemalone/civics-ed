@@ -122,6 +122,8 @@
   background-color: whitesmoke;
   color: black;
   border-radius: 1rem;
+  text-decoration: none;
+  outline: none;
 }
 
 .arrow {
@@ -129,5 +131,39 @@
   margin:15px;
 }
 
+.state_link {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin: 1em;
+  padding: 1em;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 1rem;
+  outline: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.buttonload {
+  width: 17rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin: 15px;
+  height: 60px;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 1rem;
+  text-decoration: none;
+  outline: none;
+  
+}
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+  background: whitesmoke;
+  color: black; 
+}
 
 

@@ -23,12 +23,14 @@ export class StatesCard extends Component {
     e.preventDefault()
     const { addStateInfo, isLoading, errorMsg } = this.props;
     try {
-      const state = e.target.parentNode.parentNode.id;
+      const state = e.target.parentNode.parentNode.id
       isLoading(true);
+      console.log("isLoading1", isLoading)
       const stateInfo = await getStateInfo(state)
       addStateInfo(stateInfo)
       hasErrored('')
       this.setState({ isClicked: true })
+      isLoading(false)
     } catch({messge}){
       isLoading(false)
       hasErrored({ errorMsg })
@@ -37,12 +39,21 @@ export class StatesCard extends Component {
 
   render(){
   const images = { AK, AL, AR, AZ, CA, CO };
-  const { id, name, statesImg, errorMsg } = this.props;
-  const { isClicked } = this.props;
+    const { id, name, statesImg, errorMsg, isLoading } = this.props;
+  const { isClicked } = this.state;
+
+  let stateButton 
+
+    if (isLoading === true) {
+      stateButton = <button className = "buttonload">
+      <i className = "fa fa-refresh fa-spin" ></i> Loading</button > 
+    } else {
+      stateButton = <button className="btn StatesCard_btn" onClick={(e) => this.handleClick(e)} >Choose {name}! </button>
+    }
   
-    if(this.state.isClicked){ 
-    return <Redirect to='/stateInfo' />
-    } 
+    // if(isClicked){ 
+    // return <Redirect to='/stateInfo' />
+    // } 
   return ( 
     <section className="StatesCard" id={id}>
       <div className="StatesCard-div">
@@ -53,9 +64,8 @@ export class StatesCard extends Component {
       <div className="StatesCard_img-div">
       <img className="img_img" src={images[statesImg]} /> 
       </div>
-        {errorMsg && <p className='login-error'>{errorMsg}</p>}
-        <button className="btn StatesCard_btn" onClick={(e) => this.handleClick(e)} disabled={isClicked}>
-          {isClicked && <i className="fa fa-refresh fa-spin"></i> } Choose {name}! </button>
+        {errorMsg && <p className='error'>{errorMsg}</p>}
+        {stateButton}
       </div>
     </section>
     )
@@ -63,8 +73,10 @@ export class StatesCard extends Component {
 }
 
 
-export const mapStateToProps = ({ errorMsg }) => ({
-  errorMsg
+
+export const mapStateToProps = ({ errorMsg, isLoading }) => ({
+  errorMsg,
+  isLoading
 })
 
 export const mapDispatchToProps = dispatch => ({

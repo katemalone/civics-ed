@@ -39,7 +39,7 @@ export class StateInfo extends Component {
     <section className="StateInfo" >
       <h2 className="State_Title">{name}</h2>
       <p>{legislature_name}</p>
-      <a className="state_link" href={legislature_url} >{name} &rarr;</a>
+      <a className="state_link" href={legislature_url} > Visit {name}Offical Page &rarr;</a>
       <p>{capitol_timezone}</p>
       { !isClicked &&
         <button className="btn" onClick={(e) => this.handleClick(e)}>{isClicked && <i className="fa fa-refresh fa-spin"></i>}see {name} reps</button>}
