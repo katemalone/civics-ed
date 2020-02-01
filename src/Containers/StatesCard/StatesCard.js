@@ -51,9 +51,9 @@ export class StatesCard extends Component {
       stateButton = <button className="btn StatesCard_btn" onClick={(e) => this.handleClick(e)} >Choose {name}! </button>
     }
   
-    // if(isClicked){ 
-    // return <Redirect to='/stateInfo' />
-    // } 
+    if(isClicked){ 
+    return <Redirect to='/stateInfo' />
+    } 
   return ( 
     <section className="StatesCard" id={id}>
       <div className="StatesCard-div">
