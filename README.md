@@ -18,6 +18,8 @@ Tested with Jest/Enzyme.
 
 Links using React Router.
 
+add design inspo and gif demos
+
 ### Team (solo)
 Kate Malone (https://github.com/katemalone)
 
