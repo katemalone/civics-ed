@@ -42,7 +42,7 @@ export class StateInfo extends Component {
       <a className="state_link" href={legislature_url} > Visit {name}Offical Page &rarr;</a>
       <p>{capitol_timezone}</p>
       { !isClicked &&
-        <button className="btn" onClick={(e) => this.handleClick(e)}>{isClicked && <i className="fa fa-refresh fa-spin"></i>}see {name} reps</button>}
+        <button className="btn StateInfo_btn" onClick={(e) => this.handleClick(e)}>{isClicked && <i className="fa fa-refresh fa-spin"></i>}see {name} reps</button>}
       {isClicked && 
         <StateRepsContainer /> }
       {errorMsg && <p className="login-error">{errorMsg}</p>}
