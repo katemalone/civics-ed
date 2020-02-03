@@ -9,7 +9,10 @@ Data Map
 <img width="753" alt="Screen Shot 2020-01-14 at 9 31 47 PM" src="https://user-images.githubusercontent.com/49652149/72405293-91e89080-3715-11ea-94f5-acaf1a686dd2.png">
 
 ### State of Affairs app flow
-![](stateofaffairs.gif)
+## States list 
+<img width="1412" alt="Screen Shot 2020-02-03 at 8 27 09 AM" src="https://user-images.githubusercontent.com/49652149/73667042-eb7f1380-4660-11ea-97a5-bb0b2db31f7b.png">
+
+
 
 ### Tech
 This project was bootstrapped with Create React App utilizing Redux.
