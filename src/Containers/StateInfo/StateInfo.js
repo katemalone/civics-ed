@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setRepInfo, isLoading, hasErrored }  from '../../Actions';
+import { setRepInfo, setLoading, hasErrored }  from '../../Actions';
 import { getStateReps } from '../../utils/apiCalls';
 import StateRepsContainer from '../StateRepsContainer/StateRepsContainer'
 import PropTypes from 'prop-types';
