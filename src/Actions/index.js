@@ -3,7 +3,7 @@ export const addStateInfo = (statesInfo) => ({
   statesInfo
 })
 
-export const isLoading = (bool) => ({
+export const setLoading = (bool) => ({
   type: 'IS_LOADING', 
   bool
 })

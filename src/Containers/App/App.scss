@@ -11,6 +11,7 @@
 .Header {
   height:15vh;
   position:relative;
+
     &_image {
       height: 2.4rem;
       margin: 2.5rem;
@@ -39,6 +40,7 @@
 }
 
 .StateReps_card {
+  position: relative;
   padding: 1rem; 
   border: darkslategrey solid 1px;
   border-radius: 10px;
@@ -46,9 +48,33 @@
   margin: 1rem;
 }
 
+.StateReps_name {
+  margin-left: 15px;
+  font-size: 30px;
+}
+
+.StateReps_img {
+  width: 30%;
+  margin: 15px;
+}
+
+.StateReps_contact-div {
+  position: absolute;
+  top: 63px;
+  left: 37%;
+}
+
+.state_link {
+  position: absolute;
+  bottom: -75px;
+  left: 10px;  
+}
+
 .StateInfo {
   margin: 2rem;
   padding: 1rem;
+  position: relative;
+  color: whitesmoke;
 }
 
 .State_Title {
@@ -56,8 +82,10 @@
   height: 60px;
 }
 
-.StateInfo {
-  color: whitesmoke;
+.StateInfo_btn {
+  position: absolute;
+  bottom: -150px;
+  left: 10px;
 }
 
 .StatesCard {
@@ -165,5 +193,7 @@ a:link {
   background: whitesmoke;
   color: black; 
 }
+
+
 
 

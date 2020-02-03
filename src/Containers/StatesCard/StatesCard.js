@@ -7,7 +7,7 @@ import CA from '../../utils/Images/CA.svg';
 import CO from '../../utils/Images/CO.svg';
 import { getStateInfo } from '../../utils/apiCalls';
 import { connect } from 'react-redux';
-import { addStateInfo, hasErrored, isLoading } from '../../Actions'
+import { addStateInfo, hasErrored, setLoading } from '../../Actions'
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -15,42 +15,37 @@ export class StatesCard extends Component {
   constructor(){
     super();
     this.state = {
-      isClicked : false
+      isClicked : false,
+      // thisBitch : this.props.isLoading
     }
   }
+  
 
   handleClick = async (e) => { 
     e.preventDefault()
-    const { addStateInfo, isLoading, errorMsg } = this.props;
+    const { addStateInfo, setLoading, errorMsg } = this.props;
     try {
       const state = e.target.parentNode.parentNode.id
-      isLoading(true);
-      console.log("isLoading1", isLoading)
+      setLoading(true);
       const stateInfo = await getStateInfo(state)
       addStateInfo(stateInfo)
       hasErrored('')
       this.setState({ isClicked: true })
-      isLoading(false)
+      setLoading(false)
     } catch({messge}){
-      isLoading(false)
+      setLoading(false)
       hasErrored({ errorMsg })
     }
   }
 
   render(){
-  const images = { AK, AL, AR, AZ, CA, CO };
+    console.log('isLoading line 21', this.props);
+    const images = { AK, AL, AR, AZ, CA, CO };
     const { id, name, statesImg, errorMsg, isLoading } = this.props;
-  const { isClicked } = this.state;
+    console.log('isLoading line 45', this.props);
+    
+    const { isClicked } = this.state;
 
-  let stateButton 
-
-    if (isLoading === true) {
-      stateButton = <button className = "buttonload">
-      <i className = "fa fa-refresh fa-spin" ></i> Loading</button > 
-    } else {
-      stateButton = <button className="btn StatesCard_btn" onClick={(e) => this.handleClick(e)} >Choose {name}! </button>
-    }
-  
     if(isClicked){ 
     return <Redirect to='/stateInfo' />
     } 
@@ -65,7 +60,9 @@ export class StatesCard extends Component {
       <img className="img_img" src={images[statesImg]} /> 
       </div>
         {errorMsg && <p className='error'>{errorMsg}</p>}
-        {stateButton}
+        {isLoading === true ? console.log('THIS WANTS TO CHANGE - TRUE', isLoading) : console.log('THIS WANTS TO CHANGE - FALSE', this.props.isLoading)}
+        {isLoading === true && <p className="loading-msg">Loading <i className="fa fa-refresh fa-spin" ></i></p>}
+        <button className="btn StatesCard_btn" onClick={(e) => this.handleClick(e)} >Choose {name}! </button>
       </div>
     </section>
     )
@@ -74,14 +71,14 @@ export class StatesCard extends Component {
 
 
 
-export const mapStateToProps = ({ errorMsg, isLoading }) => ({
-  errorMsg,
-  isLoading
+export const mapStateToProps = state => ({
+  errorMsg: state.errorMsg,
+  isLoading: state.isLoading
 })
 
 export const mapDispatchToProps = dispatch => ({
   addStateInfo: data => dispatch(addStateInfo(data)),
-  isLoading: bool => dispatch(isLoading(bool)),
+  setLoading: bool => dispatch(setLoading(bool)),
   hasErrored: message => dispatch(hasErrored(message))
 })
 
