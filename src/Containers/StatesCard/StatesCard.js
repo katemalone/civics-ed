@@ -60,8 +60,7 @@ export class StatesCard extends Component {
       <img className="img_img" src={images[statesImg]} /> 
       </div>
         {errorMsg && <p className='error'>{errorMsg}</p>}
-        {isLoading === true ? console.log('THIS WANTS TO CHANGE - TRUE', isLoading) : console.log('THIS WANTS TO CHANGE - FALSE', this.props.isLoading)}
-        {isLoading === true && <p className="loading-msg">Loading <i className="fa fa-refresh fa-spin" ></i></p>}
+        {isLoading === true && <button className="btn isLoading_btn">Loading <i className="fa fa-refresh fa-spin" ></i></button>}
         <button className="btn StatesCard_btn" onClick={(e) => this.handleClick(e)} >Choose {name}! </button>
       </div>
     </section>
@@ -71,10 +70,11 @@ export class StatesCard extends Component {
 
 
 
-export const mapStateToProps = state => ({
-  errorMsg: state.errorMsg,
-  isLoading: state.isLoading
-})
+export const mapStateToProps = state => {
+  return {
+    isLoading: state.isLoading
+  }
+}
 
 export const mapDispatchToProps = dispatch => ({
   addStateInfo: data => dispatch(addStateInfo(data)),
@@ -83,7 +83,7 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 
-export default connect(null, mapDispatchToProps)(StatesCard)
+export default connect(mapStateToProps, mapDispatchToProps)(StatesCard)
 
 StatesCard.propTypes = {
   addStateInfo: PropTypes.func,
