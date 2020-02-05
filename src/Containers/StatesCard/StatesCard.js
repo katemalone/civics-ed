@@ -60,8 +60,7 @@ export class StatesCard extends Component {
       <img className="img_img" src={images[statesImg]} /> 
       </div>
         {errorMsg && <p className='error'>{errorMsg}</p>}
-        {isLoading === true && <button className="btn isLoading_btn">Loading <i className="fa fa-refresh fa-spin" ></i></button>}
-        <button className="btn StatesCard_btn" onClick={(e) => this.handleClick(e)} >Choose {name}! </button>
+        {isLoading === true ? <button className="btn isLoading_btn">Loading <i className="fa fa-refresh fa-spin" ></i></button> : <button className="btn StatesCard_btn" onClick={(e) => this.handleClick(e)} >Choose {name}! </button> }
       </div>
     </section>
     )
